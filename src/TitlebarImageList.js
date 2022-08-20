@@ -38,7 +38,7 @@ export default function TitlebarImageList() {
               alt={item.title}
               loading="lazy" />
 
-            {(item.description != null && item.description != "") &&
+            {(item.description !== null && item.description !== "") &&
               <ImageListItemBar
                 title={item.title}
                 subtitle={item.subtitle}
