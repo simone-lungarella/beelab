@@ -7,11 +7,8 @@ function AppLogo() {
         <Box
             component="img"
             sx={{
-                position: 'absolute',
-                top: '50%',
-                left: '0%',
-                transform: 'translate(10%, -50%)',
-                height: 64,
+                height: 48,
+                padding: '5px',
             }}
 
             alt="App logo"
