@@ -7,7 +7,7 @@ function AppLogo() {
         <Box
             component="img"
             sx={{
-                height: 48,
+                height: 64,
                 padding: '5px',
             }}
 

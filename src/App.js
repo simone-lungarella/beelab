@@ -9,11 +9,12 @@ import './App.css';
 import Logo from './AppLogo.js';
 import Gallery from './Gallery.js';
 
+
 const theme = createTheme({
   palette: {
     primary: {
       light: '#757ce8',
-      main: '#93CDD2',
+      main: '#adb4ba',
       dark: '#3c6baa  ',
       contrastText: '#fff',
     },
@@ -48,14 +49,26 @@ function App() {
 
       <AppBar>
         <Toolbar>
-          <Logo />
+          <Grid container direction="column" justifyContent="center" alignItems="center">
+            <Grid item>
+              <Logo />
+            </Grid>
+            <Grid item>
+              <Typography gutterBottom variant="overline" component="div">
+                FALEGNAMERIA DI STANCO FRANCESCO
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body2" color="text.secondary" justifyContent='center' textAlign={'center'}>
+                Produzione materiale apistico, restauro e recupero mobili antichi, realizzazione di oggetti di design, lavorazioni e incisioni con pantografo CNC
+              </Typography>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
 
-      <Box p={3} />
-
+      <Box p={8} />
       <Gallery />
-
       <Box p={5} />
 
       <BottomNavigation sx={{
@@ -98,9 +111,9 @@ function App() {
             </IconButton>
           </Grid>
           <Grid item>
-              <Typography variant='overline' fontSize={16} >
-                + 39 347 243 1676
-              </Typography>
+            <Typography variant='overline' fontSize={16} >
+              + 39 347 243 1676
+            </Typography>
           </Grid>
         </Grid>
 

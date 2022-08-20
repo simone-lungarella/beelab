@@ -116,21 +116,13 @@ export default function Gallery() {
 
 const itemData = [
   {
-    img: './images/6.JPG',
-    title: '',
-    subtitle: '',
-    description: '',
+    img: './images/1.jpeg',
+    title: 'Riverniciatura',
+    subtitle: 'Utilizzo di attrezzature specializzata',
+    description: 'Utilizzo di attrezzature specializzata per la riverniciatura e tutte le altre operazioni di restauro',
     rows: 2,
     cols: 2,
   },
-  // {
-  //   img: './images/1.jpeg',
-  //   title: 'Riverniciatura',
-  //   subtitle: 'Utilizzo di attrezzature specializzata',
-  //   description: 'Utilizzo di attrezzature specializzata per la riverniciatura e tutte le altre operazioni di restauro',
-  //   rows: 2,
-  //   cols: 2,
-  // },
   {
     img: './images/2.jpeg',
     title: '',
