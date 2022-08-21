@@ -14,7 +14,7 @@ const theme = createTheme({
   palette: {
     primary: {
       light: '#757ce8',
-      main: '#adb4ba',
+      main: '#82A8D9',
       dark: '#3c6baa  ',
       contrastText: '#fff',
     },
@@ -47,22 +47,25 @@ function App() {
         }}
       />
 
-      <AppBar>
+      <AppBar sx={{
+        backgroundColor: '#fff',
+      }} >
         <Toolbar>
           <Grid container direction="column" justifyContent="center" alignItems="center">
             <Grid item>
               <Logo />
             </Grid>
             <Grid item>
-              <Typography gutterBottom variant="overline" component="div">
+              <Typography gutterBottom variant="overline" component="div" color='#000'>
                 FALEGNAMERIA DI STANCO FRANCESCO
               </Typography>
             </Grid>
             <Grid item>
-              <Typography variant="body2" color="text.secondary" justifyContent='center' textAlign={'center'}>
+              <Typography variant="body2" color="#000" justifyContent='center' textAlign={'center'}>
                 Produzione materiale apistico, restauro e recupero mobili antichi, realizzazione di oggetti di design, lavorazioni e incisioni con pantografo CNC
               </Typography>
             </Grid>
+            <Box p={1} />
           </Grid>
         </Toolbar>
       </AppBar>

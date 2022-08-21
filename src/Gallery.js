@@ -1,5 +1,6 @@
 import InfoIcon from '@mui/icons-material/Info';
-import { Box, Modal, Typography } from '@mui/material';
+import AspectRatioIcon from '@mui/icons-material/AspectRatio';
+import { Box, Card, CardContent, CardMedia, Grow, Modal, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
@@ -16,7 +17,7 @@ const ImageGalleryList = styled('ul')(({ theme }) => ({
     gridTemplateColumns: 'repeat(2, 1fr)'
   },
   [theme.breakpoints.up('md')]: {
-    gridTemplateColumns: 'repeat(4, 1fr)'
+    gridTemplateColumns: 'repeat(3, 1fr)'
   },
   [theme.breakpoints.up('lg')]: {
     gridTemplateColumns: 'repeat(4, 2fr)'
@@ -41,6 +42,7 @@ export default function Gallery() {
 
   const [currentTitle, setCurrentTitle] = useState(null);
   const [currentDescription, setCurrentDescription] = useState(null);
+  const [currentImage, setCurrentImage] = useState(null);
 
   return (
     <>
@@ -66,16 +68,15 @@ export default function Gallery() {
               title={item.title}
               subtitle={item.subtitle}
               actionIcon={
-                (item.description !== null && item.description !== "") &&
-
                 <IconButton
                   sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                   aria-label={`info about ${item.title}`}
                   onClick={() => {
                     setCurrentTitle(item.title);
                     setCurrentDescription(item.description);
+                    setCurrentImage(item.img);
                   }}>
-                  <InfoIcon />
+                  <AspectRatioIcon />
                 </IconButton>
               }
             />
@@ -87,27 +88,44 @@ export default function Gallery() {
         onClose={() => {
           setCurrentTitle(null);
           setCurrentDescription(null);
+          setCurrentImage(null);
         }} >
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 300,
-            bgcolor: 'background.paper',
-            border: '2px solid #284871',
-            boxShadow: 24,
-            p: 2,
-            maxHeight: '300px',
-            overflow: 'auto'
-          }} >
-          <Typography variant="h4" gutterBottom textAlign={'center'} >
-            {currentTitle}
-          </Typography>
-          <Typography variant="h6" gutterBottom justifyContent='center'>
-            {currentDescription}
-          </Typography>
+        <Box sx={{
+          width: 'auto',
+          height: 'auto',
+          maxWidth: '600px',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          backgroundColor: '#fff',
+          boxShadow: '0px 1px 0px 0px rgba(0,0,0,0.2), 0px 2px 0px 0px rgba(0,0,0,0.14), 0px 3px 0px 0px rgba(0,0,0,0.12)',
+        }}>
+          <Grow
+            sx={{
+              transition: 'transform .2s ease-in-out',
+              transformOrigin: 'top left',
+            }}
+            in={currentTitle != null}
+          >
+            <Card>
+              {currentImage !== null &&
+                <CardMedia
+                  component="img"
+                  image={require(`${currentImage}?w=248&fit=crop&auto=format`)}
+                  alt={currentTitle}
+                />
+              }
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {currentTitle}
+                </Typography>
+                <Typography variant="body1" color="textSecondary" component="p">
+                  {currentDescription}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grow>
         </Box>
       </Modal>
     </>
@@ -115,6 +133,14 @@ export default function Gallery() {
 }
 
 const itemData = [
+  {
+    img: './images/6.JPG',
+    title: '',
+    subtitle: '',
+    description: '',
+    rows: 2,
+    cols: 2,
+  },
   {
     img: './images/1.jpeg',
     title: 'Riverniciatura',
@@ -153,6 +179,14 @@ const itemData = [
     subtitle: 'Costruzione arnia personalizzata',
     description: 'Progettazione e costruzione arnia cubica personalizzata',
     rows: 1,
+    cols: 2,
+  },
+  {
+    img: './images/7.jpg',
+    title: 'Specchio antico',
+    subtitle: 'Restauro antico specchio',
+    description: 'Restauro completo di specchio antico',
+    rows: 2,
     cols: 2,
   }
 ];
