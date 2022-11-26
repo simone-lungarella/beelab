@@ -23,7 +23,7 @@ function Carousel() {
     return (
         <div className="flex flex-row relative w-full aspect-video">
 
-            <button className='absolute md:bg-white/60 w-full h-10 flex flex-row place-content-center md:hover:bg-teal-50/70 p-1 shadow-inner text-amber-300 md:text-black'
+            <button className='absolute md:bg-white/60 w-full h-10 flex flex-row place-content-center md:hover:bg-amber-50/70 p-1 shadow-inner text-amber-300 md:text-black'
                 onClick={handleUpScroll}>
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" /></svg>
@@ -43,7 +43,7 @@ function Carousel() {
                 {/* <img src={require('../images/4.jpeg')} alt="4" className='object-cover' /> */}
             </div>
 
-            <button className='absolute bottom-0 md:bg-white/60 w-full h-10 flex flex-row place-content-center md:hover:bg-teal-50/70 p-1 shadow-inner text-amber-300 md:text-black'
+            <button className='absolute bottom-0 md:bg-white/60 w-full h-10 flex flex-row place-content-center md:hover:bg-amber-50/70 p-1 shadow-inner text-amber-300 md:text-black'
                 onClick={handleDownScroll}>
 
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">ù

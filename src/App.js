@@ -6,8 +6,8 @@ import Carousel from './components/Carousel';
 function App() {
 
   return (
-    <div className='h-screen bg-gradient-to-t from-teal-50 to-teal-200'>
-      <div className='w-full md:bg-teal-50/80 md:shadow-lg grid grid-cols-1 md:grid-cols-3 place-content-center' >
+    <div className='h-screen bg-gradient-to-t from-amber-50 to-amber-200'>
+      <div className='w-full md:bg-amber-50/80 md:shadow-lg grid grid-cols-1 md:grid-cols-3 place-content-center' >
         <div className='col-span-1 md:border-r border-b shadow mr-0 md:mr-10 bg-white'>
           <AppLogo />
         </div>
@@ -21,7 +21,7 @@ function App() {
       </div>
 
       {/* Footer */}
-      <div className='fixed bg-teal-500 bottom-0 h-12 w-full'>
+      <div className='fixed bg-amber-500 bottom-0 h-12 w-full drop-shadow-lg'>
         <div className='grid grid-flow-col gap-4 place-content-center py-2'>
 
           <button className='text-white hover:scale-110'>
@@ -43,7 +43,7 @@ function App() {
           </button>
 
           <button className='text-white hover:scale-110'>
-            <a href='mailto:beelab@gmail.com'>
+            <a href='mailto:beelab.falegnameria@gmail.com'>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-at-sign">
                 <circle cx="12" cy="12" r="4"></circle>
                 <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
