@@ -1,128 +1,62 @@
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import { BottomNavigation, Box, createTheme, GlobalStyles, Grid, IconButton, ThemeProvider, Typography } from '@mui/material';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import React from 'react';
 import './App.css';
-import Logo from './AppLogo.js';
-import Gallery from './Gallery.js';
-
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      light: '#757ce8',
-      main: '#82A8D9',
-      dark: '#3c6baa  ',
-      contrastText: '#fff',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#39621d',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-    success: {
-      light: '#ff7961',
-      main: '#5fa631',
-      dark: '#508929',
-      contrastText: '#000',
-    },
-  },
-});
+import AppLogo from './AppLogo';
+import Carousel from './components/Carousel';
 
 function App() {
+
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles
-        styles={{
-          body: {
-            backgroundColor: '#e0f1f8'
-          },
-          '*::-webkit-scrollbar': {
-            display: 'none'
-          }
-        }}
-      />
+    <div className='h-screen bg-gradient-to-t from-teal-50 to-teal-200'>
+      <div className='w-full md:bg-teal-50/80 md:shadow-lg grid grid-cols-1 md:grid-cols-3 place-content-center' >
+        <div className='col-span-1 md:border-r border-b shadow mr-0 md:mr-10 bg-white'>
+          <AppLogo />
+        </div>
+        <div className='prose-sm md:prose max-w-none col-span-1 md:col-span-2 m-4'>
+          <h1><strong>Falegnameria di Stanco Francesco</strong></h1>
+          <p>Produzione materiale apistico, restauro e recupero mobili antichi, realizzazione di oggetti di design, lavorazioni e incisioni con pantografo CNC.</p>
+        </div>
+      </div>
+      <div className='p-5 lg:p-10 lg:mx-12 xl:mx-32 2xl:mx-72'>
+        <Carousel />
+      </div>
 
-      <AppBar sx={{
-        backgroundColor: '#fff',
-      }} >
-        <Toolbar>
-          <Grid container direction="column" justifyContent="center" alignItems="center">
-            <Grid item>
-              <Logo />
-            </Grid>
-            <Grid item>
-              <Typography gutterBottom variant="overline" component="div" color='#000'>
-                FALEGNAMERIA DI STANCO FRANCESCO
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body2" color="#000" justifyContent='center' textAlign={'center'}>
-                Produzione materiale apistico, restauro e recupero mobili antichi, realizzazione di oggetti di design, lavorazioni e incisioni con pantografo CNC
-              </Typography>
-            </Grid>
-            <Box p={1} />
-          </Grid>
-        </Toolbar>
-      </AppBar>
+      {/* Footer */}
+      <div className='fixed bg-teal-500 bottom-0 h-12 w-full'>
+        <div className='grid grid-flow-col gap-4 place-content-center py-2'>
 
-      <Box p={8} />
-      <Gallery />
-      <Box p={5} />
+          <button className='text-white hover:scale-110'>
+            <a href='https://www.instagram.com/falegnameria_beelab/' target='_blank' rel='noreferrer'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </button>
 
-      <BottomNavigation sx={{
-        position: 'fixed',
-        bottom: 0,
-        width: '100%',
-        backgroundColor: '#e0f1f8',
-        borderTop: '1px solid #e0f1f8',
-        borderBottom: '1px solid #e0f1f8',
-        boxShadow: '0px -1px 0px 0px rgba(0,0,0,0.2), 0px 1px 0px 0px rgba(0,0,0,0.14), 0px 2px 0px 0px rgba(0,0,0,0.12)',
-        padding: '0px',
-        margin: '0px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        '@media (max-width: 600px)': {
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-          flexWrap: 'nowrap',
-        },
-      }} >
+          <button className='text-white hover:scale-110'>
+            <a href='https://www.facebook.com/BeeLab-Falegnameria-102076162611737/'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-facebook">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </button>
 
-        <Grid container direction="row" justifyContent="center" alignItems="center">
-          <Grid item>
-            <IconButton size='large' href='https://www.facebook.com/BeeLab-Falegnameria-102076162611737/'>
-              <FacebookIcon />
-            </IconButton>
-          </Grid>
-          <Grid item>
-            <IconButton size='large' href='https://www.instagram.com/falegnameria_beelab/'>
-              <InstagramIcon />
-            </IconButton>
-          </Grid>
-          <Grid item>
-            <IconButton size='large' href='mailto:simonelungarella@gmail.com'>
-              <AlternateEmailIcon />
-            </IconButton>
-          </Grid>
-          <Grid item>
-            <Typography variant='overline' fontSize={16} >
-              + 39 347 243 1676
-            </Typography>
-          </Grid>
-        </Grid>
+          <button className='text-white hover:scale-110'>
+            <a href='mailto:beelab@gmail.com'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-at-sign">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+              </svg>
+            </a>
+          </button>
 
-      </BottomNavigation>
+          <h4 className='font-semibold text-white'>+39 347 243 1676</h4>
 
-    </ThemeProvider>
+        </div>
+      </div>
+
+    </div>
   );
 }
 
