@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/beelab/static/css/main.57036d47.css",
+    "main.js": "/beelab/static/js/main.16a519ba.js",
+    "static/js/496.79e0d48a.chunk.js": "/beelab/static/js/496.79e0d48a.chunk.js",
+    "static/media/6.jpeg": "/beelab/static/media/6.a347491772470b312168.jpeg",
+    "static/media/5.jpeg": "/beelab/static/media/5.b24b09d4d52267442196.jpeg",
+    "static/media/logo.svg": "/beelab/static/media/logo.5840e9e18eb17e0e3fc9aa4355c74ed9.svg",
+    "static/media/1.jpeg": "/beelab/static/media/1.1e1038ce14dd8e31266e.jpeg",
+    "static/media/2.jpeg": "/beelab/static/media/2.64915af0ffad10eb29d3.jpeg",
+    "static/media/3.jpeg": "/beelab/static/media/3.97be713410d6da2c994e.jpeg",
+    "index.html": "/beelab/index.html",
+    "main.57036d47.css.map": "/beelab/static/css/main.57036d47.css.map",
+    "main.16a519ba.js.map": "/beelab/static/js/main.16a519ba.js.map",
+    "496.79e0d48a.chunk.js.map": "/beelab/static/js/496.79e0d48a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57036d47.css",
+    "static/js/main.16a519ba.js"
+  ]
+}
