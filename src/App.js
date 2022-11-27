@@ -1,17 +1,36 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import './App.css';
 import AppLogo from './AppLogo';
 import Carousel from './components/Carousel';
 
 function App() {
 
+  useEffect(() => {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, []);
+
+  const handleDarkMode = () => {
+
+    if (localStorage.theme === 'dark') {
+      localStorage.theme = 'light'
+      document.documentElement.classList.remove('dark')
+    } else {
+      localStorage.theme = 'dark'
+      document.documentElement.classList.add('dark')
+    }
+  }
+
   return (
-    <div className='h-screen bg-gradient-to-t from-amber-50 to-amber-200'>
-      <div className='w-full md:bg-amber-50/80 md:shadow-lg grid grid-cols-1 md:grid-cols-3 place-content-center' >
+    <div className='h-screen bg-gradient-to-t from-amber-50 to-amber-200 dark:from-gray-900 dark:to-gray-800'>
+      <div className='w-full md:shadow-lg grid grid-cols-1 md:grid-cols-3 place-content-center md:bg-amber-50/80 dark:md:bg-gray-700/80'>
         <div className='col-span-1 md:border-r border-b shadow mr-0 md:mr-10 bg-white'>
           <AppLogo />
         </div>
-        <div className='prose-sm md:prose max-w-none col-span-1 md:col-span-2 m-4'>
+        <div className='prose max-w-none col-span-1 md:col-span-2 m-4 dark:prose-invert'>
           <h1><strong>Falegnameria di Stanco Francesco</strong></h1>
           <p>Produzione materiale apistico, restauro e recupero mobili antichi, realizzazione di oggetti di design, lavorazioni e incisioni con pantografo CNC.</p>
         </div>
@@ -19,6 +38,14 @@ function App() {
       <div className='p-5 lg:p-10 lg:mx-12 xl:mx-32 2xl:mx-72'>
         <Carousel />
       </div>
+
+      {/* Dark mode button */}
+      <button className='fixed top-0 right-0 m-3 p-2 rounded-full bg-amber-50/80 dark:bg-gray-700/80 shadow-lg hover:bg-amber-100 dark:hover:bg-gray-800'
+        onClick={handleDarkMode}>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707M16.95 6.343l.707-.707M5.636 17.657l.707-.707" />
+        </svg>
+      </button>
 
       {/* Footer */}
       <div className='fixed bg-amber-500 bottom-0 h-12 w-full drop-shadow-lg'>
